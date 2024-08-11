@@ -1,8 +1,6 @@
 package com.example.musicapp.ui.theme
 
-import android.graphics.drawable.Icon
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -159,8 +157,8 @@ fun MainView() {
                     modifier = Modifier.padding(16.dp),
                 ) {
                     items(screenInDrawer) { item ->
-                        DrawerItem(
-                            selected = item.dRoute == currentRoute,
+                        MainDrawerItem(
+                            selected = item.route == currentRoute,
                             item = item,
                             onDrawerItemClicked = {
                                 scope.launch {
@@ -172,8 +170,7 @@ fun MainView() {
                                     controller.navigate(item.dRoute)
                                     title.value = item.dTitle
                                 }
-                            }
-                        )
+                            })
                     }
                 }
             }
@@ -232,34 +229,3 @@ fun MoreBottomSheet(modifier: Modifier) {
     }
 }
 
-@Composable
-fun DrawerItem(
-    selected: Boolean,
-    item: Screen.DrawerScreen,
-    onDrawerItemClicked: () -> Unit,
-) {
-    val background = if (selected) {
-        Color.DarkGray
-    } else {
-        Color.White
-    }
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 8.dp, vertical = 16.dp)
-            .background(background)
-            .clickable {
-                onDrawerItemClicked()
-            }
-    ) {
-        Icon(
-            painter = painterResource(id = item.icon),
-            contentDescription = item.dTitle,
-            modifier = Modifier.padding(end = 8.dp, top = 4.dp)
-        )
-        Text(
-            text = item.dTitle,
-            style = MaterialTheme.typography.h5
-        )
-    }
-}
