@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.theme.mainbottomsheet
+package com.example.musicapp.ui.molecules
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding

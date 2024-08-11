@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.theme
+package com.example.musicapp.ui.screen.main
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -35,7 +35,13 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.musicapp.ui.theme.mainbottomsheet.MainBottomSheet
+import com.example.musicapp.ui.organisms.MainBottomSheet
+import com.example.musicapp.ui.organisms.AccountDialog
+import com.example.musicapp.ui.molecules.MainDrawerItem
+import com.example.musicapp.ui.Navigation
+import com.example.musicapp.ui.screen.Screen
+import com.example.musicapp.ui.screen.screenInBottom
+import com.example.musicapp.ui.screen.screenInDrawer
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)

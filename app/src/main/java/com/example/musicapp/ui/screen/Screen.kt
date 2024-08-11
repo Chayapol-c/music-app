@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.theme
+package com.example.musicapp.ui.screen
 
 import androidx.annotation.DrawableRes
 import com.example.musicapp.R

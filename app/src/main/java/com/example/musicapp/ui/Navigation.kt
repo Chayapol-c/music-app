@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.theme
+package com.example.musicapp.ui
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -8,6 +8,12 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.musicapp.ui.screen.AccountView
+import com.example.musicapp.ui.screen.BrowseView
+import com.example.musicapp.ui.screen.HomeView
+import com.example.musicapp.ui.screen.LibraryView
+import com.example.musicapp.ui.screen.Screen
+import com.example.musicapp.ui.screen.SubscriptionView
 
 @Composable
 fun Navigation(navController: NavController, pd: PaddingValues) {

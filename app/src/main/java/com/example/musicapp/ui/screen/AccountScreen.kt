@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.theme
+package com.example.musicapp.ui.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

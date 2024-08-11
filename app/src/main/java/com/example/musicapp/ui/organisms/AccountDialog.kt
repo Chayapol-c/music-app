@@ -1,6 +1,5 @@
-package com.example.musicapp.ui.theme
+package com.example.musicapp.ui.organisms
 
-import android.app.AlertDialog
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

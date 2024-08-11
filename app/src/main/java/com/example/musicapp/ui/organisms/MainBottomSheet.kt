@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.theme.mainbottomsheet
+package com.example.musicapp.ui.organisms
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -12,7 +12,8 @@ import androidx.compose.material.primarySurface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.musicapp.ui.theme.mainbottomsheet.MainBottomSheetInfo.Companion.infoList
+import com.example.musicapp.ui.molecules.MainBottomSheetInfo.Companion.infoList
+import com.example.musicapp.ui.molecules.MainBottomSheetItem
 
 @Composable
 fun MainBottomSheet(modifier: Modifier) {

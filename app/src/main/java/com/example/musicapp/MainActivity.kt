@@ -12,7 +12,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.musicapp.ui.theme.MainView
+import com.example.musicapp.ui.screen.main.MainView
 import com.example.musicapp.ui.theme.MusicAppTheme
 
 class MainActivity : ComponentActivity() {

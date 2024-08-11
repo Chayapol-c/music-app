@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.theme.mainbottomsheet
+package com.example.musicapp.ui.molecules
 
 import androidx.annotation.DrawableRes
 import com.example.musicapp.R

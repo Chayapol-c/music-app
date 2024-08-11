@@ -1,9 +1,9 @@
-package com.example.musicapp.ui.theme
+package com.example.musicapp.ui.screen.main
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModel
+import com.example.musicapp.ui.screen.Screen
 
 class MainViewModel : ViewModel() {
 
