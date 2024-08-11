@@ -6,7 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -45,10 +44,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.musicapp.R
@@ -186,7 +181,6 @@ fun MainView() {
         {
             Navigation(
                 navController = controller,
-                viewModel = viewModel,
                 pd = it
             )
 
@@ -267,38 +261,5 @@ fun DrawerItem(
             text = item.dTitle,
             style = MaterialTheme.typography.h5
         )
-    }
-}
-
-@Composable
-fun Navigation(navController: NavController, viewModel: MainViewModel, pd: PaddingValues) {
-    NavHost(
-        navController = navController as NavHostController,
-        startDestination = Screen.DrawerScreen.AddAccount.route,
-        modifier = Modifier.padding(pd)
-    ) {
-        composable(Screen.DrawerScreen.AddAccount.route) {
-
-        }
-
-        composable(Screen.DrawerScreen.Account.route) {
-            AccountView()
-        }
-
-        composable(Screen.DrawerScreen.Subscription.route) {
-            SubscriptionView()
-        }
-
-        composable(Screen.BottomScreen.Home.route) {
-            HomeView()
-        }
-
-        composable(Screen.BottomScreen.Library.route) {
-            LibraryView()
-        }
-
-        composable(Screen.BottomScreen.Browse.route) {
-            BrowseView()
-        }
     }
 }
