@@ -1,8 +1,9 @@
 package com.example.musicapp.ui.components.molecules
 
-import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
+import com.example.musicapp.ui.components.atoms.AtomText
+import com.example.musicapp.ui.components.atoms.TextVariant
 
 @Composable
 fun MoleculeButton(
@@ -15,6 +16,9 @@ fun MoleculeButton(
             onClick.invoke()
         }
     ) {
-        Text(text = text)
+        AtomText(
+            text = text,
+            variant = TextVariant.TITLE
+        )
     }
 }

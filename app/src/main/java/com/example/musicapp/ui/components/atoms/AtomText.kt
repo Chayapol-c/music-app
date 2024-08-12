@@ -12,6 +12,7 @@ fun AtomText(
     text: String?,
     modifier: Modifier = Modifier,
     variant: TextVariant? = null,
+    style: TextStyle? = null
 ) {
     text?.takeIf { it.isNotBlank() }?.let {
         val textStyle: TextStyle = when (variant) {
@@ -46,7 +47,7 @@ fun AtomText(
         Text(
             text = it,
             modifier = modifier,
-            style = textStyle
+            style = textStyle.merge(style)
         )
     }
 }

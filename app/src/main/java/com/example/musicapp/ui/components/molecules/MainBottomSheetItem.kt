@@ -8,8 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.musicapp.ui.components.atoms.AtomText
+import com.example.musicapp.ui.components.atoms.TextVariant
 
 @Composable
 fun MainBottomSheetItem(
@@ -22,6 +25,6 @@ fun MainBottomSheetItem(
             painter = painterResource(info.icon),
             contentDescription = "setting"
         )
-        Text(text = info.title, fontSize = 20.sp, color = Color.White)
+        AtomText(text = info.title, variant = TextVariant.TITLE, style = TextStyle(color = Color.White))
     }
 }

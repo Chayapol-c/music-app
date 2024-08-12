@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.AccountCircle
@@ -18,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.musicapp.R
+import com.example.musicapp.ui.components.atoms.AtomText
+import com.example.musicapp.ui.components.atoms.TextVariant
 
 @Composable
 fun AccountView() {
@@ -37,8 +38,8 @@ fun AccountView() {
                     modifier = Modifier.padding(end = 8.dp)
                 )
                 Column {
-                    Text("")
-                    Text("")
+                    AtomText("", variant = TextVariant.DESCRIPTION)
+                    AtomText("", variant = TextVariant.DESCRIPTION)
                 }
                 IconButton(
                     onClick = { /*TODO*/ }
@@ -57,7 +58,7 @@ fun AccountView() {
                 contentDescription = "My Music",
                 modifier = Modifier.padding(end = 8.dp)
             )
-            Text(text = "My Music")
+            AtomText(text = "My Music", variant = TextVariant.TITLE)
         }
         Divider()
     }

@@ -4,11 +4,13 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import com.example.musicapp.ui.components.atoms.AtomText
+import com.example.musicapp.ui.components.atoms.TextVariant
 import com.example.musicapp.ui.screen.Screen
 
 @Composable
@@ -43,7 +45,11 @@ fun OrganismBottomBar(
                             )
                         },
                         label = {
-                            Text(text = menu.bTitle, color = tint)
+                            AtomText(
+                                text = menu.bTitle,
+                                variant = TextVariant.LABEL,
+                                style = TextStyle(color = tint)
+                            )
                         },
                         selectedContentColor = Color.White,
                         unselectedContentColor = Color.Black,

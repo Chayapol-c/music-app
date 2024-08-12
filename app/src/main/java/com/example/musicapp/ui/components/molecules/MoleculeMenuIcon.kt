@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.musicapp.ui.components.atoms.AtomText
+import com.example.musicapp.ui.components.atoms.TextVariant
 
 @Composable
 fun MoleculeMenuIcon(
@@ -22,6 +23,6 @@ fun MoleculeMenuIcon(
             contentDescription = iconDescription ?: text,
             modifier = Modifier.padding(end = 8.dp)
         )
-        AtomText(text)
+        AtomText(text, variant = TextVariant.LABEL)
     }
 }

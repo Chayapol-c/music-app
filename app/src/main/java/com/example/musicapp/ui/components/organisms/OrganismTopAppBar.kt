@@ -1,11 +1,12 @@
 package com.example.musicapp.ui.components.organisms
 
-import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.runtime.Composable
+import com.example.musicapp.ui.components.atoms.AtomText
+import com.example.musicapp.ui.components.atoms.TextVariant
 import com.example.musicapp.ui.components.molecules.MoleculeIconButton
 
 @Composable
@@ -15,7 +16,7 @@ fun OrganismTopAppBar(
     onActionClick: () -> Unit
 ) {
     TopAppBar(
-        title = { Text(text = title) },
+        title = { AtomText(text = title, variant = TextVariant.TITLE) },
         navigationIcon = {
             MoleculeIconButton(
                 description = "Menu",

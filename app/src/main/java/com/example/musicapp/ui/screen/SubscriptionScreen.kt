@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Card
 import androidx.compose.material.Divider
 import androidx.compose.material.Icon
-import androidx.compose.material.Text
 import androidx.compose.material.TextButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
@@ -18,6 +17,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.musicapp.ui.components.atoms.AtomText
+import com.example.musicapp.ui.components.atoms.TextVariant
 
 @Composable
 fun SubscriptionView() {
@@ -25,22 +26,22 @@ fun SubscriptionView() {
         modifier = Modifier.height(200.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Manage Subscription")
+        AtomText(text = "Manage Subscription", variant = TextVariant.TITLE)
         Card(modifier = Modifier.padding(8.dp), elevation = 4.dp) {
             Column(modifier = Modifier.padding(8.dp)) {
                 Column {
-                    Text(text = "Musical")
+                    AtomText(text = "Musical", variant = TextVariant.LABEL)
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text(text = "Free Tier")
+                        AtomText(text = "Free Tier", variant = TextVariant.LABEL)
                         TextButton(
                             onClick = {
 
                             }) {
                             Row {
-                                Text(text = "See All Plans")
+                                AtomText(text = "See All Plans", variant = TextVariant.DESCRIPTION)
                                 Icon(
                                     imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                                     contentDescription = "See All Plans"
@@ -57,7 +58,7 @@ fun SubscriptionView() {
                         imageVector = Icons.Default.AccountBox,
                         contentDescription = "Get a Plan"
                     )
-                    Text(text = "Get a Plan")
+                    AtomText(text = "Get a Plan", variant = TextVariant.DESCRIPTION)
                 }
             }
         }
