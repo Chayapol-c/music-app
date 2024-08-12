@@ -1,6 +1,7 @@
-package com.example.musicapp
+package com.example.musicapp.domain.library
 
 import androidx.annotation.DrawableRes
+import com.example.musicapp.R
 
 data class Library(
     @DrawableRes val icon: Int,

@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.musicapp.Library
+import com.example.musicapp.domain.library.Library
 import com.example.musicapp.ui.components.molecules.MoleculeMenuIcon
 
 @Composable
