@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.molecules
+package com.example.musicapp.ui.components.molecules
 
 import androidx.annotation.DrawableRes
 import com.example.musicapp.R

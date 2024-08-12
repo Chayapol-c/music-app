@@ -22,8 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.musicapp.ui.organisms.MainBottomSheet
-import com.example.musicapp.ui.molecules.MainDrawerItem
+import com.example.musicapp.ui.components.organisms.MainBottomSheet
 import com.example.musicapp.ui.components.organisms.OrganismAccountDialog
 import com.example.musicapp.ui.Navigation
 import com.example.musicapp.ui.components.organisms.OrganismMainDrawer
