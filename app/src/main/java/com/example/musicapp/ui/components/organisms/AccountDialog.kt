@@ -1,17 +1,12 @@
-package com.example.musicapp.ui.organisms
+package com.example.musicapp.ui.components.organisms
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.AlertDialog
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.TextButton
-import androidx.compose.material.TextField
 import androidx.compose.material.primarySurface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -19,6 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
+import com.example.musicapp.ui.components.atoms.AtomTextFieldGroup
+import com.example.musicapp.ui.components.molecules.MoleculeButton
+import com.example.musicapp.ui.components.molecules.MoleculeTextField
 
 @Composable
 fun AccountDialog(dialogOpen: MutableState<Boolean>) {
@@ -28,29 +26,18 @@ fun AccountDialog(dialogOpen: MutableState<Boolean>) {
                 Text(text = "Add Account")
             },
             text = {
-                Column(
-                    modifier = Modifier
-                        .wrapContentHeight()
-                        .padding(top = 16.dp),
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    TextField(
-                        value = "", onValueChange = {
-
-                        },
-                        modifier = Modifier.padding(top = 16.dp),
-                        label = {
-                            Text(text = "Email")
-                        }
+                AtomTextFieldGroup {
+                    MoleculeTextField(
+                        label = "Email",
+                        value = "",
+                        onValueChange = {},
+                        modifier = Modifier.padding(16.dp)
                     )
-                    TextField(
-                        value = "", onValueChange = {
-
-                        },
-                        modifier = Modifier.padding(top = 8.dp),
-                        label = {
-                            Text(text = "Password")
-                        }
+                    MoleculeTextField(
+                        label = "Password",
+                        value = "",
+                        onValueChange = {},
+                        modifier = Modifier.padding(16.dp)
                     )
                 }
             },
@@ -58,22 +45,20 @@ fun AccountDialog(dialogOpen: MutableState<Boolean>) {
                 dialogOpen.value = false
             },
             confirmButton = {
-                TextButton(
+                MoleculeButton(
+                    text = "Confirm",
                     onClick = {
                         dialogOpen.value = false
                     }
-                ) {
-                    Text(text = "Confirm")
-                }
+                )
             },
             dismissButton = {
-                TextButton(
+                MoleculeButton(
+                    text = "Dismiss",
                     onClick = {
                         dialogOpen.value = false
                     }
-                ) {
-                    Text(text = "Dismiss")
-                }
+                )
             },
             modifier = Modifier
                 .fillMaxWidth()
