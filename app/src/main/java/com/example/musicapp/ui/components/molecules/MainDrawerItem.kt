@@ -1,4 +1,4 @@
-package com.example.musicapp.ui.molecules
+package com.example.musicapp.ui.components.molecules
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

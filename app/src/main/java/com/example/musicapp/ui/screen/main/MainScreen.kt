@@ -2,13 +2,7 @@ package com.example.musicapp.ui.screen.main
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.material.ModalBottomSheetValue
@@ -32,6 +26,7 @@ import com.example.musicapp.ui.organisms.MainBottomSheet
 import com.example.musicapp.ui.molecules.MainDrawerItem
 import com.example.musicapp.ui.components.organisms.OrganismAccountDialog
 import com.example.musicapp.ui.Navigation
+import com.example.musicapp.ui.components.organisms.OrganismMainDrawer
 import com.example.musicapp.ui.components.organisms.OrganismTopAppBar
 import com.example.musicapp.ui.screen.Screen
 import com.example.musicapp.ui.screen.screenInBottom
@@ -131,26 +126,21 @@ fun MainView() {
             bottomBar = bottomBar,
             scaffoldState = scaffoldState,
             drawerContent = {
-                LazyColumn(
-                    modifier = Modifier.padding(16.dp),
-                ) {
-                    items(screenInDrawer) { item ->
-                        MainDrawerItem(
-                            selected = item.route == currentRoute,
-                            item = item,
-                            onDrawerItemClicked = {
-                                scope.launch {
-                                    scaffoldState.drawerState.close()
-                                }
-                                if (item.dRoute == "add_account") {
-                                    dialogOpen.value = true
-                                } else {
-                                    controller.navigate(item.dRoute)
-                                    title.value = item.dTitle
-                                }
-                            })
+                OrganismMainDrawer(
+                    currentRoute = currentRoute ?: "",
+                    menuList = screenInDrawer,
+                    onMenuItemClick = { item ->
+                        scope.launch {
+                            scaffoldState.drawerState.close()
+                        }
+                        if (item.dRoute == "add_account") {
+                            dialogOpen.value = true
+                        } else {
+                            controller.navigate(item.dRoute)
+                            title.value = item.dTitle
+                        }
                     }
-                }
+                )
             }
         )
         {
