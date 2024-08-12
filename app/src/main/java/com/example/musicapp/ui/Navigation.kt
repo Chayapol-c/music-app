@@ -11,7 +11,7 @@ import androidx.navigation.compose.composable
 import com.example.musicapp.ui.screen.AccountView
 import com.example.musicapp.ui.screen.BrowseView
 import com.example.musicapp.ui.screen.HomeView
-import com.example.musicapp.ui.screen.LibraryView
+import com.example.musicapp.ui.screen.LibraryScreen
 import com.example.musicapp.ui.screen.Screen
 import com.example.musicapp.ui.screen.SubscriptionView
 
@@ -39,7 +39,7 @@ fun Navigation(navController: NavController, pd: PaddingValues) {
         }
 
         composable(Screen.BottomScreen.Library.route) {
-            LibraryView()
+            LibraryScreen()
         }
 
         composable(Screen.BottomScreen.Browse.route) {
