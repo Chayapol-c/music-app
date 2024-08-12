@@ -19,7 +19,7 @@ import com.example.musicapp.ui.components.molecules.MoleculeButton
 import com.example.musicapp.ui.components.molecules.MoleculeTextField
 
 @Composable
-fun AccountDialog(dialogOpen: MutableState<Boolean>) {
+fun OrganismAccountDialog(dialogOpen: MutableState<Boolean>) {
     if (dialogOpen.value) {
         AlertDialog(
             title = {

@@ -36,8 +36,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.musicapp.ui.organisms.MainBottomSheet
-import com.example.musicapp.ui.organisms.AccountDialog
 import com.example.musicapp.ui.molecules.MainDrawerItem
+import com.example.musicapp.ui.components.organisms.OrganismAccountDialog
 import com.example.musicapp.ui.Navigation
 import com.example.musicapp.ui.screen.Screen
 import com.example.musicapp.ui.screen.screenInBottom
@@ -178,7 +178,7 @@ fun MainView() {
                 pd = it
             )
 
-            AccountDialog(dialogOpen = dialogOpen)
+            OrganismAccountDialog(dialogOpen = dialogOpen)
         }
     }
 
