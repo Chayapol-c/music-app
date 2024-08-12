@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.musicapp.R
+import com.example.musicapp.ui.components.molecules.BrowseItem
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -36,7 +37,7 @@ fun HomeView() {
                 )
                 LazyRow {
                     items(categories) {
-                        BrowserItem(
+                        BrowseItem(
                             category = it,
                             drawable = R.drawable.ic_browse
                         )
@@ -49,20 +50,3 @@ fun HomeView() {
     }
 }
 
-@Composable
-fun BrowserItem(category: String, drawable: Int) {
-    Card(
-        modifier = Modifier
-            .padding(16.dp)
-            .size(200.dp),
-        border = BorderStroke(width = 1.dp, color = Color.DarkGray)
-    ) {
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Text(text = category)
-            Image(painter = painterResource(drawable), contentDescription = category)
-        }
-    }
-}
