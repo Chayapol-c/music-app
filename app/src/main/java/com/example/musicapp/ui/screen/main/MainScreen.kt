@@ -16,8 +16,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -25,6 +23,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.musicapp.ui.components.organisms.MainBottomSheet
 import com.example.musicapp.ui.components.organisms.OrganismAccountDialog
 import com.example.musicapp.ui.Navigation
+import com.example.musicapp.ui.components.organisms.OrganismBottomBar
 import com.example.musicapp.ui.components.organisms.OrganismMainDrawer
 import com.example.musicapp.ui.components.organisms.OrganismTopAppBar
 import com.example.musicapp.ui.screen.Screen
@@ -54,41 +53,6 @@ fun MainView() {
     val currentScreen = remember { viewModel.currentScreen.value }
     val title = remember { mutableStateOf(currentScreen.title) }
     val dialogOpen = remember { mutableStateOf(false) }
-    val bottomBar: @Composable () -> Unit = {
-        if (currentScreen is Screen.DrawerScreen || currentScreen == Screen.BottomScreen.Home) {
-            BottomNavigation(
-                modifier = Modifier.wrapContentSize()
-            ) {
-                screenInBottom.forEach { item ->
-                    val tint = if (item.bRoute == currentRoute) {
-                        Color.White
-                    } else {
-                        Color.Black
-                    }
-                    BottomNavigationItem(
-                        selected = item.bRoute == currentRoute,
-                        onClick = {
-                            controller.navigate(item.bRoute)
-                            title.value = item.title
-                        },
-                        icon = {
-
-                            Icon(
-                                tint = tint,
-                                painter = painterResource(item.icon),
-                                contentDescription = item.title
-                            )
-                        },
-                        label = {
-                            Text(text = item.bTitle, color = tint)
-                        },
-                        selectedContentColor = Color.White,
-                        unselectedContentColor = Color.Black,
-                    )
-                }
-            }
-        }
-    }
 
     ModalBottomSheetLayout(
         sheetState = modalSheetState,
@@ -120,9 +84,17 @@ fun MainView() {
                     }
                 )
             },
+            bottomBar = {
+                OrganismBottomBar(
+                    currentMenu = currentRoute ?: "",
+                    onChangeMenu = {
+                        controller.navigate(it.bRoute)
+                        title.value = it.title
+                    },
+                    isDisplay = currentScreen is Screen.DrawerScreen || currentScreen == Screen.BottomScreen.Home,
+                    navigationMenuList = screenInBottom
                 )
             },
-            bottomBar = bottomBar,
             scaffoldState = scaffoldState,
             drawerContent = {
                 OrganismMainDrawer(
