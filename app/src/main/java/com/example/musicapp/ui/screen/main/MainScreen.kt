@@ -10,16 +10,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.ModalBottomSheetLayout
 import androidx.compose.material.ModalBottomSheetValue
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.rememberModalBottomSheetState
 import androidx.compose.material.rememberScaffoldState
 
@@ -39,6 +32,7 @@ import com.example.musicapp.ui.organisms.MainBottomSheet
 import com.example.musicapp.ui.molecules.MainDrawerItem
 import com.example.musicapp.ui.components.organisms.OrganismAccountDialog
 import com.example.musicapp.ui.Navigation
+import com.example.musicapp.ui.components.organisms.OrganismTopAppBar
 import com.example.musicapp.ui.screen.Screen
 import com.example.musicapp.ui.screen.screenInBottom
 import com.example.musicapp.ui.screen.screenInDrawer
@@ -114,37 +108,24 @@ fun MainView() {
     ) {
         Scaffold(
             topBar = {
-                TopAppBar(
-                    title = { Text(text = title.value) },
-                    actions = {
-                        IconButton(
-                            onClick = {
-                                scope.launch {
-                                    if (modalSheetState.isVisible) {
-                                        modalSheetState.hide()
-                                    } else {
-                                        modalSheetState.show()
-                                    }
-                                }
-                            }
-                        ) {
-                            Icon(imageVector = Icons.Default.MoreVert, contentDescription = "more")
+                OrganismTopAppBar(
+                    title = title.value,
+                    onNavigationClick = {
+                        scope.launch {
+                            scaffoldState.drawerState.open()
                         }
                     },
-                    navigationIcon = {
-                        IconButton(
-                            onClick = {
-                                scope.launch {
-                                    scaffoldState.drawerState.open()
-                                }
+                    onActionClick = {
+                        scope.launch {
+                            if (modalSheetState.isVisible) {
+                                modalSheetState.hide()
+                            } else {
+                                modalSheetState.show()
                             }
-                        ) {
-                            Icon(
-                                Icons.Default.AccountCircle,
-                                contentDescription = "Menu"
-                            )
                         }
                     }
+                )
+            },
                 )
             },
             bottomBar = bottomBar,
